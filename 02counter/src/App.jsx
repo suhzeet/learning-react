@@ -9,23 +9,30 @@ function App() {
   // let counter = 8;
 
   const addValue = function () {
+    if (counter + 1 > 20) {
+      alert("Limit Exceeded");
+    } else {
+      setCounter(counter + 1);
+    }
     // counter += 1;
-    setCounter(counter + 1);
   };
 
   const removeValue = function () {
-    setCounter(counter - 1);
+    if (counter - 1 < 0) {
+      alert("Value cannot be negative");
+    } else {
+      setCounter(counter - 1);
+    }
   };
 
   return (
     <>
-      <h1>Chai aur react</h1>
-      <h2>counter value: {counter}</h2>
+      <h1>Counter Project</h1>
+      <h2>Counter value: {counter}</h2>
 
-      <button onClick={addValue}>add value {counter}</button>
+      <button onClick={addValue}>add value</button>
       <br />
-      <button onClick={removeValue}>remove value {counter}</button>
-      <p>footer: {counter}</p>
+      <button onClick={removeValue}>remove value</button>
     </>
   );
 }
